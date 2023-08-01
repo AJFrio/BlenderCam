@@ -11,20 +11,47 @@ def render(renderNumber):
     bpy.ops.render.render(write_still = True)
 
 def EightPointRender():
+    initPos = float(cam.location.y)
     rNum = 1
-    camLX, camLY = cam.location.x, cam.location.y
-    camRZ = cam.rotation_euler[2]
     render(rNum)
     rNum += 1
-    camLX = camLY * .75
-    camLY = camLY * .75
-    camRZ = camRZ + math.radians(-45)
+    cam.location.x = cam.location.y * .75
+    cam.location.y = cam.location.y * .75
+    cam.rotation_euler[2] = cam.rotation_euler[2] + math.radians(-45)
     render(rNum)
     rNum += 1
+    cam.location.x = initPos
+    cam.location.y = 0
+    cam.rotation_euler[2] = cam.rotation_euler[2] + math.radians(-45)
+    render(rNum)
+    rNum += 1
+    cam.location.y = cam.location.x * .75
+    cam.location.x = cam.location.x * .75
+    cam.rotation_euler[2] = cam.rotation_euler[2] + math.radians(-45)
+    render(rNum)
+    rNum += 1
+    cam.location.x = 0
+    cam.location.y = -(initPos)
+    cam.rotation_euler[2] = cam.rotation_euler[2] + math.radians(-45)
+    render(rNum)
+    rNum += 1
+    cam.location.x = cam.location.y * .75
+    cam.location.y = cam.location.y * .75
+    cam.rotation_euler[2] = cam.rotation_euler[2] + math.radians(-45)
+    render(rNum)
+    rNum += 1
+    cam.location.x = -initPos
+    cam.location.y = 0
+    cam.rotation_euler[2] = cam.rotation_euler[2] + math.radians(-45)
+    render(rNum)
+    rNum += 1
+    cam.location.y = cam.location.x * .75
+    cam.location.x = cam.location.x * .75
+    cam.rotation_euler[2] = cam.rotation_euler[2] + math.radians(-45)
+    render(rNum)
 
-
-
-    '''
+EightPointRender()
+'''
     while rNum < 8:
         bpy.ops.render.render(write_still = True)
         if rNum % 2 == 0:
