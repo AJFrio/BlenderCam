@@ -1,4 +1,8 @@
 import os
+import bpy
+from Renderer import EightPointRender
 
 camPos = bpy.data.objects['Camera'].location
-setCam = bpy.data.objects['Camera']
+
+
+EightPointRender()
