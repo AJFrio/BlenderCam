@@ -15,7 +15,7 @@ def EightPointRender():
     rNum = 1
     render(rNum)
     rNum += 1
-    cam.location.x = cam.location.y * .75
+    cam.location.x = cam.location.y * -.75
     cam.location.y = cam.location.y * .75
     cam.rotation_euler[2] = cam.rotation_euler[2] + math.radians(-45)
     render(rNum)
@@ -45,7 +45,7 @@ def EightPointRender():
     cam.rotation_euler[2] = cam.rotation_euler[2] + math.radians(-45)
     render(rNum)
     rNum += 1
-    cam.location.y = cam.location.x * .75
+    cam.location.y = cam.location.x * -.75
     cam.location.x = cam.location.x * .75
     cam.rotation_euler[2] = cam.rotation_euler[2] + math.radians(-45)
     render(rNum)
