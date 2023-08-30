@@ -62,9 +62,17 @@ def EPRV2():
         cam.rotation_euler[2] = cam.rotation_euler[2] + math.radians(-45)
         render(i + 1)
 
-EightPointRender()
-
-
+def test():
+    r = 3
+    x = 0
+    y = 0
+    rot = 0
+    for i in range(8):
+        x = r * math.cos(math.radians(45 * i))
+        y = r * math.sin(math.radians(45 * i))
+        rot = rot + math.radians(-45)
+        render(i + 1)
+        print(f"x: {x}, y: {y}")
 
 '''
     while rNum < 8:
