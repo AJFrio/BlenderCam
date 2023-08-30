@@ -50,7 +50,22 @@ def EightPointRender():
     cam.rotation_euler[2] = cam.rotation_euler[2] + math.radians(-45)
     render(rNum)
 
+def center():
+    cam.location.x = 0
+    cam.rotation_euler[2] = cam.rotation_euler[2] + math.radians(45)
+
+def EPRV2():
+    r = cam.location.y
+    for i in range(8):
+        cam.location.x = r * math.cos(math.radians(45 * i))
+        cam.location.y = r * math.sin(math.radians(45 * i))
+        cam.rotation_euler[2] = cam.rotation_euler[2] + math.radians(-45)
+        render(i + 1)
+
 EightPointRender()
+
+
+
 '''
     while rNum < 8:
         bpy.ops.render.render(write_still = True)
